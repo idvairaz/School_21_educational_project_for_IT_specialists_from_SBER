@@ -1,21 +1,12 @@
 # SQL Bootcamp
 
-## 📄 Content
-
-[Description](https://github.com/idvairaz/SQL-Bootcamp#-description)
-
-[Schemas preview](https://github.com/idvairaz/SQL-Bootcamp#-schemas)
-
-[Exercises](https://github.com/idvairaz/SQL-Bootcamp#-exercises)
-
-
 ## 📝 Description
 SQL Bootcamp at School21 is an introduction to SQL language and databases in the intensive format: you need to complete exercises and present your solutions to other students every day to succeed at the Bootcamp.
 Each module (day) in Bootcamp contains tasks dedicated to implementation of SQL statements to retrieve needed data from given database.
 
 Database Management System used in Bootcamp is <code>PostgreSQL</code>.
 
-IDE I used: ***DataGRIP*** from JetBrains.
+IDE I used: ***CLion*** from JetBrains.
 
 ## 🔃 Schemas
 
