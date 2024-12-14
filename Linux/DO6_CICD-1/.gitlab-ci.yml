@@ -1,0 +1,65 @@
+stages:
+  # - display_ip
+  - build
+  - style_test
+  - test
+  - deploy
+
+# display_ip:
+#   stage: display_ip
+#   script:
+#    - echo `hostname -I` > runner_ip.log
+#    - IP=$(cat runner_ip.log)
+#    - echo "${IP}"
+
+build_job:
+  stage: build
+  script:
+    - cd src/cat/
+    - make s21_cat
+    - cd ../grep/
+    - make s21_grep
+  artifacts:
+    paths:
+      - src/cat/s21_cat
+      - src/grep/s21_grep
+    expire_in: 30 days
+  after_script:
+    - bash telega.sh
+
+style-test-job:
+  stage: style_test
+  script:
+    - cd src
+    - clang-format -Werror -n $(find . -name '*.c' -o -name '*.h')
+  after_script:
+    - bash telega.sh
+  # - if ! clang-format -n $(find . -name '*.c' -o -name '*.h'); then exit 1; fi
+
+  # - clang-format -n src/*/*.c 
+    # if clang-format -n src/*/*.c &> /dev/null; then
+    #    exit 1
+    # fi
+    # exit 0
+
+test-job:
+  stage: test
+  script:
+    - cd src/cat && bash ./test.sh
+    - cd ../grep && bash ./test.sh
+  when: on_success
+  allow_failure: false
+after_script:
+    - bash telega.sh
+
+deploy-job:
+  stage: deploy
+  script:
+    #- chmod +x deploy.sh
+    #- bash deploy.sh 
+    scp -i /home/.ssh/id_rsa -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null src/cat/s21_cat src/grep/s21_grep cicd2@192.168.1.103:/usr/local/bin
+  when: manual
+  after_script:
+    - bash telega.sh 
+
+
