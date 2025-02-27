@@ -1,0 +1,52 @@
+
+void print_all_game_info(AllGameInfo_t *all_game_info) {
+  printf("*****************\n");
+  printf("action %d", all_game_info->action);
+  printf("\n");
+
+  int **f = all_game_info->current_figure;
+  printf("current_figure\n");
+  for (int i = 0; i < FIGURE_SIZE; i++) {
+    for (int j = 0; j < FIGURE_SIZE; j++) {
+      printf("\t%d", f[i][j]);
+    }
+    printf("\n");
+  }
+  printf("current_figure_type %d", all_game_info->current_figure_type);
+  printf("\n");
+  printf("\n");
+
+  f = all_game_info->field;
+  printf("field");
+  printf("\n");
+  for (int i = 0; i < FIELD_ROWS; i++) {
+    for (int j = 0; j < FIELD_COLS; j++) {
+      printf("\t%d", f[i][j]);
+    }
+    printf("\n");
+  }
+
+  printf("high_score %d", all_game_info->high_score);
+  printf("\n");
+  printf("level %d", all_game_info->level);
+  printf("\n");
+
+  f = all_game_info->next;
+  printf("next");
+  printf("\n");
+  for (int i = 0; i < FIGURE_SIZE; i++) {
+    for (int j = 0; j < FIGURE_SIZE; j++) {
+      printf("\t%d", f[i][j]);
+    }
+    printf("\n");
+  }
+  printf("next_figure_type %d", all_game_info->next_figure_type);
+  printf("\n");
+  printf("pause %d", all_game_info->pause);
+  printf("\n");
+  printf("score %d", all_game_info->score);
+  printf("\n");
+  printf("speed %d", all_game_info->speed);
+  printf("\n");
+  printf("*****************\n");
+}

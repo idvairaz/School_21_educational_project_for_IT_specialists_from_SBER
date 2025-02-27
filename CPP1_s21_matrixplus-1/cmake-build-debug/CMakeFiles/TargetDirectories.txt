@@ -1,0 +1,3 @@
+/home/ira/Downloads/School-21_Основа/CPP1_s21_matrixplus-1/cmake-build-debug/CMakeFiles/CPP1_s21_matrixplus_1.dir
+/home/ira/Downloads/School-21_Основа/CPP1_s21_matrixplus-1/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/ira/Downloads/School-21_Основа/CPP1_s21_matrixplus-1/cmake-build-debug/CMakeFiles/rebuild_cache.dir
