@@ -20,6 +20,7 @@ TEST(TestSub, 00_Sub) {
   C.setElement(1, 0, 2.0);
   C.setElement(1, 1, 2.2);
 
+
   C.setElement(2, 0, 4.0);
   C.setElement(2, 1, 4.2);
 
