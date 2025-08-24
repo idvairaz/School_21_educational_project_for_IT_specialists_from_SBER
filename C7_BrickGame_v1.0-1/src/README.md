@@ -13,7 +13,7 @@
 - После введения команды make install игра сразу запустится.
 - Появится игровое поле
 
-![gui_tetris.png](../../misc/images/gui_tetris.png)
+![gui_tetris.png](../misc/images/gui_tetris.png)
 
 
 ## Для управления игрой используйте клавиши:
